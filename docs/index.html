@@ -5,18 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
     <div id="app">
         <h1>{{ message }}</h1>
         <input type="text" v-model="message">
+
+        <ul>
+            <li v-for="child in children" :class="{'male': child.sex === 'male'}">{{ child.name }}</li>
+        </ul>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
     <script>
         new Vue({
             el: "#app",
             data: {
-                message: "Александр Бартов"
+                message: "Александр Бартов",
+                children: [
+                    { name: 'Костя', sex: 'male' },
+                    { name: 'Ксюша', sex: 'female' },
+                    { name: 'Коля', sex: 'male' },
+                    { name: 'Саша', sex: 'male' },
+                    { name: 'Лиза', sex: 'female' },
+                    { name: 'Ваня', sex: 'male' }
+                ]
             }
         })
     </script>
