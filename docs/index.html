@@ -10,7 +10,8 @@
 <body>
     <div id="app">
         <h1>{{ message }}</h1>
-        <input type="text" v-model="message">
+        <input type="text" v-model="message" @keyup.13="onClick">
+        <button @click="onClick">push</button>
 
         <ul>
             <li v-for="child in children" :class="{'male': child.sex === 'male'}">{{ child.name }}</li>
@@ -21,7 +22,7 @@
         new Vue({
             el: "#app",
             data: {
-                message: "Александр Бартов",
+                message: "",
                 children: [
                     { name: 'Костя', sex: 'male' },
                     { name: 'Ксюша', sex: 'female' },
@@ -30,6 +31,12 @@
                     { name: 'Лиза', sex: 'female' },
                     { name: 'Ваня', sex: 'male' }
                 ]
+            },
+            methods: {
+                onClick: function() {
+                    this.children.push({ name: this.message })
+                    this.message = ''
+                }
             }
         })
     </script>
