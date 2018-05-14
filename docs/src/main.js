@@ -1,5 +1,8 @@
 new Vue ({
     el: "#app",
+    data: {
+        correntView: 'first'
+    },
     components: {
         first: {
             template: "#first"
@@ -12,6 +15,11 @@ new Vue ({
         },
         fourth: {
             template: "#fourth"
+        }
+    },
+    methods: {
+        switchView: function (view) {
+            this.correntView = view
         }
     }
 })

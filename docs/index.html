@@ -11,14 +11,14 @@
     <div id="app">
         <header>
             <nav>
-                <a href="#">один</a>
-                <a href="#">два</a>
-                <a href="#">три</a>
-                <a href="#">четыре</a>
+                <a href="#" @click="switchView('first')">один</a>
+                <a href="#" @click="switchView('second')">два</a>
+                <a href="#" @click="switchView('third')">три</a>
+                <a href="#" @click="switchView('fourth')">четыре</a>
             </nav>
         </header>
 
-        <first></first>
+        <component :is="correntView"></component>
 
     </div>
     
