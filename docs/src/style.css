@@ -25,3 +25,15 @@ header {
     color: rgb(8, 18, 168);
     font-size: 90vh;
 }
+
+.switch {
+    transition: all .5s ease-in-out;
+}
+
+.switch-enter {
+    left: 100%;
+}
+
+.switch-leave {
+    left: -100%;
+}
