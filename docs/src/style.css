@@ -1,3 +1,19 @@
-.male {
-    color: red;
+.first {
+    color: gold;
+    font-size: 90vh;
+}
+
+.second {
+    color: rgb(255, 0, 255);
+    font-size: 90vh;
+}
+
+.third {
+    color: rgb(27, 26, 23);
+    font-size: 90vh;
+}
+
+.fourth {
+    color: rgb(8, 18, 168);
+    font-size: 90vh;
 }

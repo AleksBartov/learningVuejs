@@ -9,36 +9,34 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ message }}</h1>
-        <input type="text" v-model="message" @keyup.13="onClick">
-        <button @click="onClick">push</button>
+        <header>
+            <nav>
+                <a href="#">один</a>
+                <a href="#">два</a>
+                <a href="#">три</a>
+                <a href="#">четыре</a>
+            </nav>
+        </header>
 
-        <ul>
-            <li v-for="child in children" :class="{'male': child.sex === 'male'}">{{ child.name }}</li>
-        </ul>
+        <first></first>
+
     </div>
+    
+    <template id="first">
+        <div class="first">1</div>
+    </template>
+    <template id="second">
+        <div class="second">2</div>
+    </template>
+    <template id="third">
+        <div class="third">3</div>
+    </template>
+    <template id="fourth">
+        <div class="fourth">4</div>
+    </template>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+    <script src="./src/main.js"></script>
     <script>
-        new Vue({
-            el: "#app",
-            data: {
-                message: "",
-                children: [
-                    { name: 'Костя', sex: 'male' },
-                    { name: 'Ксюша', sex: 'female' },
-                    { name: 'Коля', sex: 'male' },
-                    { name: 'Саша', sex: 'male' },
-                    { name: 'Лиза', sex: 'female' },
-                    { name: 'Ваня', sex: 'male' }
-                ]
-            },
-            methods: {
-                onClick: function() {
-                    this.children.push({ name: this.message })
-                    this.message = ''
-                }
-            }
-        })
     </script>
 </body>
 </html>
